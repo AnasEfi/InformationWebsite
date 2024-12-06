@@ -8,83 +8,93 @@
                 </svg>
             </button>
             <ul class="main-nav" :class="{ 'show-menu': isMenuOpen }">
-                <li class="nav-item">
-                    <router-link :to="{ name: 'main' }">
-                        Главная
+                  
+                <li v-for="item in menu" :key="item.id" class="nav-item" :class="{ 'dropdown': item.subItems }">
+                    <router-link :to="item.path">
+                        {{ item.name }}
                     </router-link>
-                </li>
-                <li class="nav-item dropdown">
-                    <router-link :to="{ name: 'about' }">
-                        О кафедре
-                    </router-link>
-                    <span class="low-wrapper-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <span v-if="item.subItems" class="low-wrapper-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                             <path
                                 d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z">
                             </path>
-                        </svg></span>
-
-                    <ul class="dropdown-content">
-                        <li><router-link :to="{ name: 'deal' }">
-                                Текущая деятельность
-                            </router-link></li>
-                        <li><router-link to="/about/history">История</router-link></li>
-                        <li><router-link to="/about/contribution">Вклад в развитие университета</router-link></li>
-                        <li><router-link to="/about/heads">Заведующие</router-link></li>
-                        <li><router-link to="/about/portrait">Портрет кафедры</router-link></li>
-                        <li><router-link to="/about/position">Положение о кафедре</router-link></li>
-                        <li><router-link to="/about/news">Новости</router-link></li>
+                        </svg>
+                    </span>
+                    <ul v-if="item.subItems" class="dropdown-content">
+                        <li v-for="subItem in item.subItems" :key="subItem.id" class="nav-item"
+                            :class="{ 'dropdown': subItem.subItems }">
+                            <router-link :to="subItem.path">
+                                {{ subItem.name }}
+                            </router-link>
+                            <span v-if="subItem.subItems" class="low-wrapper-arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                    <path
+                                        d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <ul v-if="subItem.subItems" class="dropdown-content">
+                                <li v-for="subSubItem in subItem.subItems" :key="subSubItem.id">
+                                    <router-link :to="subSubItem.path">
+                                        {{ subSubItem.name }}
+                                    </router-link>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <router-link to="/news">Новости</router-link>
-                </li>
-                <li class="nav-item dropdown">
-                    <router-link to="/study">Учебная работа</router-link>
-                    <span class="low-wrapper-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <path
-                                d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z">
-                            </path>
-                        </svg></span>
-
-                    <ul class="dropdown-content">
-                        <li><router-link to="/study/courses">Главная</router-link></li>
-                        <li><router-link to="/study/schedule">Практика</router-link></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <router-link to="/science">Наука</router-link>
-                </li>
-                <li class="nav-item"><router-link to="/staff">Сотрудники</router-link></li>
-                <li class="nav-item dropdown">
-                    <router-link to="/resources">Ресурсы</router-link>
-                    <span class="low-wrapper-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <path
-                                d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z">
-                            </path>
-                        </svg></span>
-                    <ul class="dropdown-content">
-                        <li><router-link to="/resources/library">Библиотека</router-link></li>
-                        <li><router-link to="/resources/labs">Лаборатории</router-link></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><router-link to="/jubilee">Юбилей</router-link></li>
             </ul>
         </nav>
     </header>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     name: 'AppHeader',
     data() {
         return {
+            menu: [],
             isMenuOpen: false
         };
     },
     methods: {
         toggleMenu() {
             this.isMenuOpen = !this.isMenuOpen;
+        },
+        async fetchMenu() {
+            try {
+                const response = await axios.get('http://localhost:3000/menu');
+                this.menu = this.processMenu(response.data);
+                console.log(this.menu);
+            } catch (error) {
+                console.error('Ошибка при получении меню:', error);
+            }
+        },
+        processMenu(menuItems) {
+            const menuMap = {};
+            const rootItems = [];
+
+            // Создаем карту элементов меню
+            menuItems.forEach(item => {
+                menuMap[item.id] = { ...item, subItems: [] };
+            });
+
+            // Связываем элементы с их родителями
+            menuItems.forEach(item => {
+                if (item.parentId !== 1) {
+                    if (menuMap[item.parentId]) {
+                        menuMap[item.parentId].subItems.push(menuMap[item.id]);
+                    }
+                } else {
+                    rootItems.push(menuMap[item.id]);
+                }
+            });
+            return rootItems;
         }
+    },
+    created() {
+        this.fetchMenu();
     }
 }
 </script>

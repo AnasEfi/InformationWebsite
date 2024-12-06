@@ -56,7 +56,6 @@ export default {
             titleChapter: 'Основные разделы',
             titleStudyMaterial: 'Материалы сотрудников кафедры',
             titleStudyMaterialDocs: 'Документы по учебной работе',
-
         };
     }
 }

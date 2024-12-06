@@ -1,34 +1,29 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import MainPage from '../views/MainPage.vue';
-import HistoryPage from '../views/HistoryPage.vue';
-import NotFound from '../views/NotFound.vue'
-
 
 const routes = [
   {
     path: '/',
     name: 'main',
-    component: MainPage,
+    component: () => import(/* webpackChunkName: "MainPage" */ '../views/MainPage.vue'),
   },
   {
     path: '/about/history',
     name: 'history',
-    component: HistoryPage,
+    component: () => import(/* webpackChunkName: "HistoryPage" */ '../views/HistoryPage.vue'),
   },
   {
     path: '/about',
     name: 'about',
-    component: HistoryPage,
+    component: () => import(/* webpackChunkName: "CurrentDealPage */ '../views/CurrentDealPage.vue'),
   },
   {
     path: '/deal',
-    name: 'deal'
-    
+    name: 'deal',
   },
   {
     path: '/:pathMatch(.*)*',
     name: 'notFound',
-    component: NotFound
+    component: () => import(/* webpackChunkName: "NotFound" */ '../views/NotFound.vue'),
   }
 ];
 
