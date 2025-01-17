@@ -1,5 +1,20 @@
 <template>
     <header class="header">
+        <div class="first-header-part">
+            <div class="main-title">
+                <p>АСУ</p>
+            </div>
+            <div class="main-subtitle">
+                <p>Кафедра автоматизированных
+                    <br>систем управления</p>
+            </div>
+            <div class="first-header-part-sections">
+           <div class="item-first-header-part"><p>Положение о кафедре</p></div><div class="slash"></div> 
+           <div class="item-first-header-part"><p>Документы СМК</p></div> 
+        </div>
+        </div>
+        
+        <div class="second-header-title">
         <nav class="low-wrapper">
             <button class="menu-toggle" @click="toggleMenu">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -8,35 +23,35 @@
                 </svg>
             </button>
             <ul class="main-nav" :class="{ 'show-menu': isMenuOpen }">
-                  
-                <li v-for="item in menu" :key="item.id" class="nav-item" :class="{ 'dropdown': item.subItems }">
+
+                <li v-for="item in menu" :key="item.id" class="nav-item"
+                    :class="{ 'dropdown': item.subItems.length, 'low-wrapper-arrow': item.subItems.length }">
                     <router-link :to="item.path">
-                        {{ item.name }}
+                        {{ item.title }}
                     </router-link>
-                    <span v-if="item.subItems" class="low-wrapper-arrow">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <path
-                                d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z">
-                            </path>
-                        </svg>
-                    </span>
+                    <svg v-if="item.subItems.length" class="low-wrapper-arrow" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512">
+                        <path
+                            d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z">
+                        </path>
+                    </svg>
                     <ul v-if="item.subItems" class="dropdown-content">
-                        <li v-for="subItem in item.subItems" :key="subItem.id" class="nav-item"
-                            :class="{ 'dropdown': subItem.subItems }">
+                        <div class="line"></div>
+                        <li v-for="subItem in item.subItems" :key="subItem.id" 
+                            :class="{ 'dropdown-sub': subItem.subItems, 'low-wrapper-arrow-sub': subItem.subItems }">
                             <router-link :to="subItem.path">
-                                {{ subItem.name }}
+                                {{ subItem.title }}
                             </router-link>
-                            <span v-if="subItem.subItems" class="low-wrapper-arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                                    <path
-                                        d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z">
-                                    </path>
-                                </svg>
-                            </span>
-                            <ul v-if="subItem.subItems" class="dropdown-content">
+                            <svg v-if="subItem.subItems.length" class="low-wrapper-arrow-sub"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path
+                                    d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z">
+                                </path>
+                            </svg>
+                            <ul v-if="subItem.subItems" class="dropdown-content-sub">
                                 <li v-for="subSubItem in subItem.subItems" :key="subSubItem.id">
                                     <router-link :to="subSubItem.path">
-                                        {{ subSubItem.name }}
+                                        {{ subSubItem.title }}
                                     </router-link>
                                 </li>
                             </ul>
@@ -45,6 +60,7 @@
                 </li>
             </ul>
         </nav>
+    </div>
     </header>
 </template>
 
@@ -52,6 +68,7 @@
 import axios from 'axios';
 export default {
     name: 'AppHeader',
+    title: 'Кафедра Автоматизированных систем управления',
     data() {
         return {
             menu: [],
@@ -77,17 +94,18 @@ export default {
 
             // Создаем карту элементов меню
             menuItems.forEach(item => {
-                menuMap[item.id] = { ...item, subItems: [] };
+                    menuMap[item.id] = { ...item, subItems: [] };
             });
 
             // Связываем элементы с их родителями
             menuItems.forEach(item => {
-                if (item.parentId !== 1) {
+                if (item.parentId !== 0 && item.parentId !== 1) {
                     if (menuMap[item.parentId]) {
                         menuMap[item.parentId].subItems.push(menuMap[item.id]);
                     }
                 } else {
                     rootItems.push(menuMap[item.id]);
+
                 }
             });
             return rootItems;
@@ -100,90 +118,131 @@ export default {
 </script>
 
 <style>
-* {
-    padding: 0;
+
+.header > .first-header-part {
+    display: flex;
+    height: 100px;
+    background-color: rgb(74, 72, 101);
+    box-shadow: 0 1px 1px  rgba(255, 255, 255, 0.61);
+}
+
+.header > .first-header-part > .main-title {
+    font-size: 100px;
+    font-weight: 1000;
+    padding: 10px 10px 0 30px;
+    color: white;
+}
+
+.header > .first-header-part > .main-subtitle {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.header > .first-header-part > .main-subtitle p {
+    font-size: 30px;
+    color: white;
+    font-weight: 100;
+}
+
+.header > .first-header-part > .first-header-part-sections {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 30px;
+}
+
+.header > .first-header-part > .first-header-part-sections p {
+    color: white;
+    font-size: 15px;
+    font-weight: 1000;
+}
+
+.item-first-header-part {
+    position: relative;
+    padding-right: 10px;
+}
+
+.item-first-header-part:not(:last-child)::after {
+    content: '/';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: rgba(255, 255, 255, 0.61);
+    font-size: 30px;
+}
+
+
+.header > .second-header-title p {
+    font-size: 50px;
+    color: rgb(74, 72, 101);
+    padding-left: 55px;
+    height: 100%;
     margin: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    color: inherit;
 }
 
-:root {
-    --main-bg-color: #f5f5f5;
-    --font-color-dark-primary: #454444;
-    --font-color-secondary: #696969;
-    --secondary-bg-color: #4271a4;
-    --menu-bg-color: #C8D7E4;
-}
-
-.header {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0px;
+.header>.second-header-title {
     display: flex;
     width: 100%;
     justify-content: space-between;
     z-index: 1000;
-    background-color: rgb(74, 72, 101);
+    background-color:white;
     transition: .5s ease-out;
-    font-family: "Ubuntu";
+    font-family: "Ruda";
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2); 
+    position: sticky; 
+    top: 0;   
 }
+.header>.second-header-title p {
+    font-family: "Ruda", sans-serif;
+    font-size: 50px;
+    color: rgb(74, 72, 101);
+    align-content: center;
+    padding: 0px 0px 0px 55px;
+    height: 100%;
 
-.header>.logoItem {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.header>.logoItem p {
-    font-family: Helvetica, sans-serif;
-    font-size: 30px;
-    color: white;
 }
 
 nav.low-wrapper {
-    flex: 4;
-    top: 0;
-    height: 75px;
+    height: 90px;    
     align-content: center;
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    color: var(--main-bg-color);
+    font-family: "Ruda", sans-serif;
+    font-weight: 800;
+    font-size: 20px;
 }
 
 .main-nav {
     display: flex;
     flex-wrap: nowrap;
-    padding: 0px 50px 0px 0px;
+    padding: 0px 50px 0px 30px;
     position: relative;
-    gap: 20px;
+    gap: 25px;
     justify-content: right;
     height: 100%;
     align-items: center;
     text-align: center;
+    color: rgb(74, 72, 101);
+    
 }
 
-span.low-wrapper-arrow {
+.low-wrapper-arrow {
     margin: 0 0 0 2px;
     padding: 0;
-    fill: white;
+    fill: rgb(74, 72, 101);
 }
 
-span.low-wrapper-arrow svg {
+.low-wrapper-arrow svg {
     height: 12px;
+
 }
 
-span.low-wrapper-arrow-sub {
+.low-wrapper-arrow-sub {
     margin: 0 0 0 2px;
     padding: 0;
     fill: rgb(0, 0, 0);
 }
 
-span.low-wrapper-arrow-sub svg {
+.low-wrapper-arrow-sub svg {
     height: 12px;
 }
 
@@ -194,6 +253,16 @@ span.low-wrapper-arrow-sub svg {
     height: 100%;
 }
 
+.nav-item:not(:last-child)::after {
+    content: '/';
+    position: absolute;
+    color: rgba(144, 144, 144, 0.411);
+    top: 25px;
+    right: -20px;
+    font-size: 26px;
+    font-weight: 100;
+}
+
 .nav-item a {
     display: inline-block;
     height: 100%;
@@ -202,11 +271,17 @@ span.low-wrapper-arrow-sub svg {
 }
 
 .dropdown-content {
+    margin-top: -13px;
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 8px 16px 6px rgba(0, 0, 0, 0.2);
+
+    .line {
+        border-top: 5px solid rgb(74, 72, 101);
+    }
+    
 }
 
 .dropdown-content-sub {
@@ -215,29 +290,27 @@ span.low-wrapper-arrow-sub svg {
     top: 0px;
     left: 100%;
     background-color: #f9f9f9;
-    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     list-style: none;
     min-width: 200px;
+    
 }
 
 .dropdown-content a {
-    color: black;
+    color: rgb(60, 53, 53);
     padding: 12px 16px;
+    margin: 0 0 0 -2px;         /*todo margin!*/
     text-decoration: none;
     box-shadow: 0 0 0 0 rgb(0, 0 0, 0.1);
     display: block;
+    box-shadow: 0px 0px 1px 0px #69696952;
 }
 
 .dropdown-content-sub a {
     color: black;
     text-decoration: none;
-    box-shadow: 0 0 0 0 rgb(0, 0 0, 0.1);
     display: block;
-}
-
-.text-arror {
-    align-items: center;
+    
 }
 
 .dropdown-content a:hover {
@@ -270,7 +343,7 @@ span.low-wrapper-arrow-sub svg {
     background: none;
     border: none;
     cursor: pointer;
-    fill: white;
+    fill: rgb(31, 16, 16);
     padding: 10px;
 }
 
@@ -318,7 +391,6 @@ span.low-wrapper-arrow-sub svg {
         font-weight: 600;
         position: relative;
         align-self: center;
-        width: 100%;
 
         &:hover {
             background-color: rgb(7, 6, 9);

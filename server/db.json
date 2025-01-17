@@ -31,15 +31,7 @@
             "links": ""
         }
     ],
-    
     "menu": [
-        {
-            "id": 1,
-            "name": "",
-            "path": "/",
-            "title": "asugubkin.ru",
-            "parentId": 0
-        },
         {
             "id": 2,
             "name": "about",
@@ -72,7 +64,7 @@
             "id": 8,
             "name": "study",
             "path": "/study",
-            "title": "Учебная работв",
+            "title": "Учебная работа",
             "parentId": 1
         },
         {
@@ -81,13 +73,6 @@
             "path": "/stuff",
             "title": "Сотрудники",
             "parentId": 1
-        },
-        {
-            "id": 27,
-            "name": "history",
-            "path": "/history/about",
-            "title": "о чем то",
-            "parentId": 2
         },
         {
             "id": 30,
@@ -152,5 +137,78 @@
             "title": "Контакты",
             "parentId": 2
         }
+    ],
+
+    "news": [
+        {
+            "publisher": "Леонов Дмитрий Геннадьевич",
+            "title": "Заседание кафедры",
+            "shortDescripion": "28 октября в 17:00 состоится заседание кафедры АСУ (аудитория 1215а).",
+            "content": "<p>Повестка дн&#1103;:</p><ol><li>О формировании плана издани&#1103; научной и учебной литературы на 2025 год, отчёт о выполнении за текущий год.</li><li>О плане работы Центра системных исследований ЕСГ.</li><li>О ходе подготовки плана меропри&#1103;тий к 95-летию университета и 50-летию кафедры.</li><li>Разное.</li></ol>",
+            "publishDate": "24.11.24 16:17",
+            "url": "//asugubkin.ru/news/546.html"
+        },
+        {
+            "publisher": "Леонов Дмитрий Геннадьевич",
+            "title": "Заседание кафедры",
+            "shortDescripion": "28 октября в 17:00 состоится заседание кафедры АСУ (аудитория 1215а)",
+            "content": "Повестка дня: Утверждение учебных планов по направлениям бакалавриата и магистратуры на 2025 год набора и корректировка текущих учебных планов. Формирование государственных экзаменационных комиссий на 2025 год.",
+            "publishDate": "2001-10-20T17:00:00Z",
+            "url": "https://asugubkin.ru/news/546.html"
+        },
+        {
+            "publisher": "",
+            "title": "Заседание кафедры",
+            "shortDescripion": "26 сент&#1103;бр&#1103; в 17:00 состоитс&#1103; заседание кафедры АСУ (аудитори&#1103; 1215а).",
+            "content": "<p>Повестка дн&#1103;:</p><ol><li>Утверждение научных руководителей и формулировок тем ВКР бакалавров и магистрантов первого курса.</li><li>Пересдачи (повторна&#1103; промежуточна&#1103; аттестаци&#1103;) за 2023/2024 учебный год.</li><li>Разное.</li></ol>",
+            "publishDate": "2024-09-25T12:43:00Z ",
+            "url": "//asugubkin.ru/news/544.html"
+        },
+        {
+            "publisher": "",
+            "title": "Наши поздравления",
+            "shortDescripion": "",
+            "content": "<br>Поздравл&#1103;ем Дмитри&#1103; Беловицкого (группа АСМ-24-04) и Виктора Негробова (группа АС-21-05), <a href=\"https://gubkin.ru/news/detail.php?ID=52518\">победивших в составе университетской команды в тематическом направлении «Цифровой двойник» хакатона дл&#1103; студентов вузов-партнеров ПАО «Газпром»</a>.</p>",
+            "publishDate": "2024-08-30T19:20:00Z",
+            "url": "https://asugubkin.ru/news/546.html"
+        },
+        {
+            "publisher": "",
+            "title": "Заседание кафедры",
+            "shortDescripion": "30 августа в 10:30 состоится заседание кафедры АСУ (аудитория 1215а).",
+            "content": "<p>Повестка дн&#1103;:</p><ol><li>Отчёт о выполнении фактической нагрузки кафедры за 2023/2024 учебный год.</li><li>Отчёты о выполнении индивидуальных планов работы преподавателей за 2023/2024 учебный год.</li><li>Подготовка к новому учебному году.</li><li>Разное.</li></ol>",
+            "publishDate": "2024-08-24T20:07",
+            "url": "//asugubkin.ru/news/542.html"
+        }
+    ],
+    "stuff": [
+        {
+            "name": "Малиновская Г.Н.",
+            "img": "https://asugubkin.ru/staff/malinovskaya/.keep/.malinovskaya.jpg",
+            "info": "<p>к.т.н., доцент.<p><b>Окончила</b> ГАНГ имени И.М. Губкина в 1994 г.  каф. АСУ. <p><b>Преподает учебные курсы:</b> \"Системы управления базами данных\", \"Сетевые методы и графы в автоматизированном управлении\", \"Теория автоматического управления\", \"Управление техническими системами\", \"Теоретические основы автоматизированных систем управления\".<p><b>Научные интересы:</b> компьютерные комплексы решения режимно-технологических задач планирования и управления режимами газотранспортных систем. <p><b>Контактный адрес:</b> <a href=\"mailto:malinovskaya.g@gubkin.ru\">malinovskaya.g@gubkin.ru</a>"
+
+        },
+        {
+            "name": "Леонов Д.Г.",
+            "img": "https://asugubkin.ru/staff/dl/.keep/.dl.jpg",
+            "info": "<h3>Леонов Дмитрий Геннадьевич<\/h3><img src=\"/staff\/dl\/.keep\/.dl.jpg\" width=400 height=400 border=0 align=right><p>Профессор кафедры АСУ, д.т.н., доцент.<p><b>Окончил<\/b> ГАНГ им. И.М.Губкина в 1992 г., каф. АСУ., трудовой стаж 28 лет, педагогический стаж 25 лет.<p><b>Научные интересы:<\/b> компьютерные комплексы решения режимно-технологических задач планирования и управления режимами газотранспортных систем, распределенные системы, информационная безопасность.<p><b>Публикации:<\/b> более <a href=\"https:\/\/www.elibrary.ru\/author_items.asp?authorid=815843\">ста опубликованных научных работ<\/a>, соавтор книг <a href=\"http:\/\/bugtraq.ru\/library\/books\/attack\/\">\"Атака на Internet\"<\/a>, <a href=\"http:\/\/bugtraq.ru\/library\/books\/attack3\/\">\"Атака из Internet\"<\/a>, создатель и ведущий сайта <a href=\"http:\/\/bugtraq.ru\">BugTraq.Ru<\/a> и ряда других <a href=\"http:\/\/ezhe.ru\/fri\/10\/\">интернет-проектов<\/a>.<p><b>Контакты:<\/b><%ASU%><table border=0 cellspacing=10 cellpadding=10><tr><td><img src=\"https:\/\/asugubkin.ru\/img\/mail.24.png\" width=24 height=24 vspace=10 hspace=10><td><a href=\"mailto:dl@asugubkin.ru\">dl@asugubkin.ru<\/a><br><a href=\"mailto:dl@bugtraq.ru\">dl@bugtraq.ru<\/a><br><a href=\"mailto:leonov.d@gubkin.ru\">leonov.d@gubkin.ru <\/a><\/td><\/tr><tr><td><img src=\"https:\/\/asugubkin.ru\/img\/tg.24.png\" width=24 height=24 vspace=10 hspace=10><td><a href=\"https:\/\/t.me\/DmitryLeonov\">@DmitryLeonov<\/a><\/td><\/tr><\/table><%\/ASU%><%RSU%><br><br><img src=\"https:\/\/asugubkin.ru\/img\/mail.24.png\" width=24 height=24 vspace=10 hspace=10>&nbsp;<a href=\"mailto:leonov.d@gubkin.ru\">leonov.d@gubkin.ru<\/a><br><br><img src=\"https:\/\/asugubkin.ru\/img\/tg.24.png\" width=24 height=24 vspace=10 hspace=10>&nbsp;<a href=\"https:\/\/t.me\/DmitryLeonov\">@DmitryLeonov<\/a><%\/RSU%><p><b>Читаемые курсы:<\/b><ul><li>\"Методы и средства защиты информации\" (3 курс);<li>\"Объектно-ориентированное проектирование и программирование\" (3 курс);<li>\"Системное программирование\" (3 курс);<li>\"Современные технологии программирования\" (первый курс магистерской подготовки).<li>\"Технологии разработки интегрированных информационных систем\" (второй курс магистерской подготовки).<\/ul><p>Научный руководитель программы магистерской подготовки <a href=\"https:\/\/gubkin.ru\/programms\/magistratura\/FAiVT\/programma_09.04.01.01.pdf\">\"Автоматизированные системы диспетчерского управления в нефтегазовом комплексе\"<\/a>.<br><br><!--<p><b>Доступные документы:<\/b><%LIST RECURSIVE NUMBER=20 CACHE=1%><%ITEM%><br><a href=\"<%DOCURL%>\"><%DOCTITLE%><\/a> \/\/ <span class=ml> <%TIME%><\/span><%\/ITEM%><br><br><%\/LIST%>-->%%%%<h2>Сотрудники кафедры<\/h2><a href=\"https:\/\/www.gubkin.ru\/faculty\/automation_and_computer_science\/chairs_and_departments\/asu\/staff.php\" target=_blank>Профессорско-преподавательский состав кафедры АСУ<\/a><br><br><a href=\"https:\/\/www.gubkin.ru\/general\/rukovodstvo\/rectorat\/Maximenko.php\">д.т.н. профессор Максименко А.Ф. — зав.кафедрой<\/a><br><a href=\"aletdinova\/\">д.т.н. профессор Алетдинова А.А.<\/a><br><a href=\"dl\/\">д.т.н. профессор Леонов Д.Г.<\/a><br><a href=\"stepin\/\">д.т.н. профессор Степин Ю.П. <\/a><br><a href=\"volkov\/\">к.т.н. доцент Волков Д.А.<\/a><br><a href=\"https:\/\/www.gubkin.ru\/faculty\/oil_and_gas_development\/chairs_and_departments\/physics\/eliseev-n-yu.php\">к.т.н. доцент Елисеев Н.Ю.<\/a><br><a href=\"malinovskaya\/\">к.т.н. доцент Малиновская Г.Н.<\/a><br>к.т.н. доцент Нистратов А.А.<br><a href=\"papilina\/\">к.т.н. доцент Папилина Т.М.<\/a><br>к.т.н. доцент Самсонова В.В.<br>к.т.н. доцент Фридлянд А.М.<br><a href=\"arbuzova\/\">ст. преподаватель Арбузова А.В.<\/a><br><a href=\"asiryan\/\">ст.преподаватель Асирян А.В.<\/a><br><a href=\"mukhina\/\">ст.преподаватель Мухина А.Г.<\/a><br><a href=\"stepankina\/\">ст.преподаватель Степанкина О.А.<\/a><br><a href=\"tupysev\/\">ст.преподаватель Тупысев А.М.<\/a><br><a href=\"http:\/\/www.gubkin.ru\/faculty\/humanities\/chairs_and_departments\/foreign_language\/fonareva.php\">ст.преподаватель Шеляго Н.Д.<\/a><br>ассистент Аганов В.М.<br>ассистент Гребенкина Д.А.<br>ассистент Девин Д.Н.<br>ассистент Манзюк Н.Ю.<br>ассистент Ульянов М.С.<br><br><!--<h3>Доступные документы:<\/h3><%LIST RECURSIVE NUMBER=10 CACHE=1%><%ITEM%><a href=\"<%DOCURL%>\"><%DOCTITLE%><\/a> \/\/ <a href=\"<%CHAPURL%>\"><%CHAPTITLE%><\/a> \/\/ <span class=ml> <%TIME%><\/span><br><%\/ITEM%><br><br><%PAGES%><%\/LIST%>-->"
+        },
+
+        {
+            "name": "Асирян А.В.",
+            "img":"https://asugubkin.ru/staff/asiryan/.keep/.asiryan.jpg",
+            "info": "<h3>Асирян Александр Вячеславович<\/h3><img src=\"/staff\/asiryan\/.keep\/.asiryan.jpg\" width=400 height=533 border=0 align=right><p>Старший преподаватель кафедры \"Автоматизированные системы управления\" РГУ нефти и газа имени И.М.Губкина<p><b>Окончил<\/b> магистратуру по программе \"Автоматизация и управление\" в 2009 году.<p><b>Научные интересы:<\/b> решением проблем автоматизированных систем диспетчерского управления (АСДУ) технологическими процессами в нефтегазовой отрасли, развитием программно-технического комплекса АСУ ТП (в частности распределённые системы управления DSC-системы, SCADA-системы, технические средства автоматизации и промышленные сети), а также интересы в области компьютерного обучения диспетчеров (разработка компьютерных обучающих тренажёров).<p><b>Читает лекции по курсам:<\/b><ul><li>Проектирование автоматизированных систем диспетчерского управления в нефтегазовой отрасли (4 курс);<li>Операционные системы (2 курс);<li>Компьютерные обучающие системы (1 курс магистранты). <\/ul><p><b>Публикации:<\/b><ul><li>Многофункциональная открытая мультимедийная обучающая программа довузовского образования по разделу \"Механика\" (2010);<li>\"Актуальность создания ситуационных центров коллективного взаимодействия и принятия решений для нефтегазовых компаний\" в научно-техническом журнале \"АВТОМАТИЗАЦИЯ, ТЕЛЕМЕХАНИЗАЦИЯ И СВЯЗЬ В НЕФТЯНОЙ ПРОМЫШЛЕННОСТИ\". ?8 Август 2012 г.;<li>Перспективные информационно-образовательные технологии для обучения специалистов н\/г отрасли (2013).<\/ul><p>Лауреат Всероссийского конкурса научно-исследовательских работ в области технологий электронного обучения в образовательном процессе (2010 год).<p><b>Контактный адрес:<\/b> <a href=\"mailto:asiryan.a@gubkin.ru\">asiryan.a@gubkin.ru<\/a>%%%%<h2>Сотрудники кафедры<\/h2><a href=\"https:\/\/www.gubkin.ru\/faculty\/automation_and_computer_science\/chairs_and_departments\/asu\/staff.php\" target=_blank>Профессорско-преподавательский состав кафедры АСУ<\/a><br><br><a href=\"https:\/\/www.gubkin.ru\/general\/rukovodstvo\/rectorat\/Maximenko.php\">д.т.н. профессор Максименко А.Ф. — зав.кафедрой<\/a><br><a href=\"aletdinova\/\">д.т.н. профессор Алетдинова А.А.<\/a><br><a href=\"dl\/\">д.т.н. профессор Леонов Д.Г.<\/a><br><a href=\"stepin\/\">д.т.н. профессор Степин Ю.П. <\/a><br><a href=\"volkov\/\">к.т.н. доцент Волков Д.А.<\/a><br><a href=\"https:\/\/www.gubkin.ru\/faculty\/oil_and_gas_development\/chairs_and_departments\/physics\/eliseev-n-yu.php\">к.т.н. доцент Елисеев Н.Ю.<\/a><br><a href=\"malinovskaya\/\">к.т.н. доцент Малиновская Г.Н.<\/a><br>к.т.н. доцент Нистратов А.А.<br><a href=\"papilina\/\">к.т.н. доцент Папилина Т.М.<\/a><br>к.т.н. доцент Самсонова В.В.<br>к.т.н. доцент Фридлянд А.М.<br><a href=\"arbuzova\/\">ст. преподаватель Арбузова А.В.<\/a><br><a href=\"asiryan\/\">ст.преподаватель Асирян А.В.<\/a><br><a href=\"mukhina\/\">ст.преподаватель Мухина А.Г.<\/a><br><a href=\"stepankina\/\">ст.преподаватель Степанкина О.А.<\/a><br><a href=\"tupysev\/\">ст.преподаватель Тупысев А.М.<\/a><br><a href=\"http:\/\/www.gubkin.ru\/faculty\/humanities\/chairs_and_departments\/foreign_language\/fonareva.php\">ст.преподаватель Шеляго Н.Д.<\/a><br>ассистент Аганов В.М.<br>ассистент Гребенкина Д.А.<br>ассистент Девин Д.Н.<br>ассистент Манзюк Н.Ю.<br>ассистент Ульянов М.С.<br><br><!--<h3>Доступные документы:<\/h3><%LIST RECURSIVE NUMBER=10 CACHE=1%><%ITEM%><a href=\"<%DOCURL%>\"><%DOCTITLE%><\/a> \/\/ <a href=\"<%CHAPURL%>\"><%CHAPTITLE%><\/a> \/\/ <span class=ml> <%TIME%><\/span><br><%\/ITEM%><br><br><%PAGES%><%\/LIST%>-->"
+        },
+        {
+            "name": "Степанкина О.А.",
+            "img":"https://asugubkin.ru/staff/stepankina/.keep/.stepankina.jpg",
+            "info": "<h3>Степанкина Ольга Александровна<\/h3><img src=\"/staff\/stepankina\/.keep\/.stepankina.jpg\" width=400 height=400 border=0 align=right><p><b>Окончила<\/b> Государственную академию нефти и газа имени И.М. Губкина в 1992 г. (инженер-системотехник, автоматизированные системы управления). Работает на кафедре АСУ с 1996 г. в должностях старшего преподавателя, заместителя заведующего кафедрой по учебной работе.<%ASU%><p><b>Контактный адрес:<\/b> <a href=\"mailto:olga@asugubkin.ru\">olga@asugubkin.ru<\/a><%\/ASU%><p><b>Доступные документы:<\/b><%LIST RECURSIVE NUMBER=20 CACHE=1%><%ITEM%><br><a href=\"<%DOCURL%>\"><%DOCTITLE%><\/a> \/\/ <span class=ml> <%TIME%><\/span><%\/ITEM%><br><br><%\/LIST%>%%%%<h2>Сотрудники кафедры<\/h2><a href=\"https:\/\/www.gubkin.ru\/faculty\/automation_and_computer_science\/chairs_and_departments\/asu\/staff.php\" target=_blank>Профессорско-преподавательский состав кафедры АСУ<\/a><br><br><a href=\"https:\/\/www.gubkin.ru\/general\/rukovodstvo\/rectorat\/Maximenko.php\">д.т.н. профессор Максименко А.Ф. — зав.кафедрой<\/a><br><a href=\"aletdinova\/\">д.т.н. профессор Алетдинова А.А.<\/a><br><a href=\"dl\/\">д.т.н. профессор Леонов Д.Г.<\/a><br><a href=\"stepin\/\">д.т.н. профессор Степин Ю.П. <\/a><br><a href=\"volkov\/\">к.т.н. доцент Волков Д.А.<\/a><br><a href=\"https:\/\/www.gubkin.ru\/faculty\/oil_and_gas_development\/chairs_and_departments\/physics\/eliseev-n-yu.php\">к.т.н. доцент Елисеев Н.Ю.<\/a><br><a href=\"malinovskaya\/\">к.т.н. доцент Малиновская Г.Н.<\/a><br>к.т.н. доцент Нистратов А.А.<br><a href=\"papilina\/\">к.т.н. доцент Папилина Т.М.<\/a><br>к.т.н. доцент Самсонова В.В.<br>к.т.н. доцент Фридлянд А.М.<br><a href=\"arbuzova\/\">ст. преподаватель Арбузова А.В.<\/a><br><a href=\"asiryan\/\">ст.преподаватель Асирян А.В.<\/a><br><a href=\"mukhina\/\">ст.преподаватель Мухина А.Г.<\/a><br><a href=\"stepankina\/\">ст.преподаватель Степанкина О.А.<\/a><br><a href=\"tupysev\/\">ст.преподаватель Тупысев А.М.<\/a><br><a href=\"http:\/\/www.gubkin.ru\/faculty\/humanities\/chairs_and_departments\/foreign_language\/fonareva.php\">ст.преподаватель Шеляго Н.Д.<\/a><br>ассистент Аганов В.М.<br>ассистент Гребенкина Д.А.<br>ассистент Девин Д.Н.<br>ассистент Манзюк Н.Ю.<br>ассистент Ульянов М.С.<br><br><!--<h3>Доступные документы:<\/h3><%LIST RECURSIVE NUMBER=10 CACHE=1%><%ITEM%><a href=\"<%DOCURL%>\"><%DOCTITLE%><\/a> \/\/ <a href=\"<%CHAPURL%>\"><%CHAPTITLE%><\/a> \/\/ <span class=ml> <%TIME%><\/span><br><%\/ITEM%><br><br><%PAGES%><%\/LIST%>-->"
+        },
+        {
+            "name": "Мухина А.Г.",
+            "img":"https://asugubkin.ru/staff/mukhina/.keep/.mukhina.jpg",
+            "info": "<h3>Мухина Анастасия Геннадьевна<\/h3><img src=\"/staff\/mukhina\/.keep\/.mukhina.jpg\" width=276 height=373 border=0 align=right><p>Старший преподаватель кафедры АСУ.<p><b>Окончила<\/b> магистратуру по программе \"Интеллектуальные системы\" в 2012 г. <p><b>Научные интересы:<\/b> history matching (адаптация в автоматизированном управлении добычей нефти и газа); EnKF (фильтры Калмана); синергетический анализ; цифровые технологии геологического и гидродинамического моделирования.  <p><b>Публикации:<\/b> ряд статей по применению фильтров Калмана в автоматизированном управлении добычей углеводородов; \"Holistic Approach to History Matching Problem in Automated Control in Oil and Gas Production\" (сборник докладов международной научной конференции \"Applied and Fundamental Studies\", том 1); соавтор методического пособия \"Решение задачи идентификации динамических систем с помощью фильтра Калмана\".<p>Контактный адрес: <a href=\"mailto:mukhina.a@gubkin.ru\">mukhina.a@gubkin.ru<\/a><p><b>Читаемые курсы:<\/b><ul><li>Идентификация и управление (2-ой курс магистерской подготовки);<li>Интегрированные системы автоматизированного управления (4-ый курс)<\/ul>%%%%<h2>Сотрудники кафедры<\/h2><a href=\"https:\/\/www.gubkin.ru\/faculty\/automation_and_computer_science\/chairs_and_departments\/asu\/staff.php\" target=_blank>Профессорско-преподавательский состав кафедры АСУ<\/a><br><br><a href=\"https:\/\/www.gubkin.ru\/general\/rukovodstvo\/rectorat\/Maximenko.php\">д.т.н. профессор Максименко А.Ф. — зав.кафедрой<\/a><br><a href=\"aletdinova\/\">д.т.н. профессор Алетдинова А.А.<\/a><br><a href=\"dl\/\">д.т.н. профессор Леонов Д.Г.<\/a><br><a href=\"stepin\/\">д.т.н. профессор Степин Ю.П. <\/a><br><a href=\"volkov\/\">к.т.н. доцент Волков Д.А.<\/a><br><a href=\"https:\/\/www.gubkin.ru\/faculty\/oil_and_gas_development\/chairs_and_departments\/physics\/eliseev-n-yu.php\">к.т.н. доцент Елисеев Н.Ю.<\/a><br><a href=\"malinovskaya\/\">к.т.н. доцент Малиновская Г.Н.<\/a><br>к.т.н. доцент Нистратов А.А.<br><a href=\"papilina\/\">к.т.н. доцент Папилина Т.М.<\/a><br>к.т.н. доцент Самсонова В.В.<br>к.т.н. доцент Фридлянд А.М.<br><a href=\"arbuzova\/\">ст. преподаватель Арбузова А.В.<\/a><br><a href=\"asiryan\/\">ст.преподаватель Асирян А.В.<\/a><br><a href=\"mukhina\/\">ст.преподаватель Мухина А.Г.<\/a><br><a href=\"stepankina\/\">ст.преподаватель Степанкина О.А.<\/a><br><a href=\"tupysev\/\">ст.преподаватель Тупысев А.М.<\/a><br><a href=\"http:\/\/www.gubkin.ru\/faculty\/humanities\/chairs_and_departments\/foreign_language\/fonareva.php\">ст.преподаватель Шеляго Н.Д.<\/a><br>ассистент Аганов В.М.<br>ассистент Гребенкина Д.А.<br>ассистент Девин Д.Н.<br>ассистент Манзюк Н.Ю.<br>ассистент Ульянов М.С.<br><br><!--<h3>Доступные документы:<\/h3><%LIST RECURSIVE NUMBER=10 CACHE=1%><%ITEM%><a href=\"<%DOCURL%>\"><%DOCTITLE%><\/a> \/\/ <a href=\"<%CHAPURL%>\"><%CHAPTITLE%><\/a> \/\/ <span class=ml> <%TIME%><\/span><br><%\/ITEM%><br><br><%PAGES%><%\/LIST%>-->"
+        }
     ]
+    "resources":
 }

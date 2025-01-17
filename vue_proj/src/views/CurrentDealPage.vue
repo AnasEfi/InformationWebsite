@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import Header from '../components/Header.vue'
-import Footer from '../components/Footer.vue'
+import Header from '../components/common/Header.vue'
+import Footer from '../components/common/Footer.vue'
 import DocumentList from '../components/DocumentList.vue';
 import InformBlock from '../components/InformBlock.vue';
 import axios from 'axios';

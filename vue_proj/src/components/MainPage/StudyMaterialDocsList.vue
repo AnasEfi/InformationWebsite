@@ -10,7 +10,7 @@ import StudyMaterialDocs from './StudyMaterialDocs.vue';
 
 export default {
     name: 'StudyMaterialList',
-    components: {StudyMaterialDocs },
+    components: {StudyMaterialDocs},
     data() {
         return {
            documents: [

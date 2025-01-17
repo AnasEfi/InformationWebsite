@@ -3,8 +3,12 @@
         <section class="footer-container">
             <div class="contact-section">
                 <div class="left-contact-section">
-                    <div class="footer-logo"><img src="../assets/images/asu.logo.png" alt="logo"></div>
-
+                    <div class="footer-logo"><img src="./../../assets/images/asu.logo.png" alt="logo"></div>
+                    <div class="contact-info-item">
+                            <h2>График работы</h2><br> Ведется прием 
+                            с 10:00 до 16:00 ежедневно, 
+                            кроме субботы и воскресенья.
+                        </div>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-vk"></i></a>
                         <a href="#"><i class="fab fa-telegram"></i></a>
@@ -20,11 +24,7 @@
                                 E-Mail: asu@gubkin.ru 
                                 Раздел на сайте университета</p>
                         </div>
-                        <div class="contact-info-item">
-                            График работы: ведется прием 
-                            с 10:00 до 16:00 ежедневно, 
-                            кроме субботы и воскресенья.
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -40,25 +40,34 @@ export default {
 }
 </script>
 
-<style>
-
-.footer-container {
-    display:flex;
+<style scoped >
+section.footer-container {
     flex-direction: row;
-    background-color: #333;
+    background-color:  rgb(74, 72, 101);
     min-height: 150px;
 }
 
 .contact-section {
-
+    display: flex;
     flex-direction: space-between;
-    gap: 40px;
-    padding: 5vh 10vw;
-    border-top: 3px solid #000000;
+    gap: 10px;
+    padding: 5vh 5vw;
+    border-top: 5px solid #e8e3d3;
 
     .left-contact-section {
-        align-items: center;
+       
+        color: #ffffff;
+        font-size: 15px;
+        font-family: Ruda;
+        font-weight: 500;
+        text-align:justify;
+        align-items: left;
         flex: 1;
+
+        h2{
+        
+            padding: 10px 0px 0px 0px;
+        }
     }
 
     .right-contact-section {
@@ -85,7 +94,7 @@ export default {
 .social-links {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
     gap: 10px;
 }
 
@@ -111,6 +120,6 @@ export default {
 .footer-logo {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
 }
 </style>
