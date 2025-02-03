@@ -1,6 +1,6 @@
 <template>
     <div class="main-text-sections-description">
-        <h1>{{ this.title }}</h1>
+        <h1 :style="{color:textColor}"  >{{ this.title }}</h1>
     </div>
 </template>
 
@@ -11,6 +11,25 @@ export default {
         title: {
             type: String,
             default: ''
+        },
+        color: {
+            type: String,
+            default: '#e8e3d3',
+        },
+        lineColor: {
+            type: String,
+            default: '#e8e3d3'
+        }
+    },
+
+    computed: {
+        textColor() {
+            return this.color;
+        },
+        lineStyle() {
+            return {
+                backgroundColor: this.lineColor
+            }
         }
     }
 }
@@ -19,7 +38,7 @@ export default {
 <style scoped>
 .main-text-sections-description {
     display: flex;
-    margin: 30px 0 40px 0; 
+    margin: 30px 0 50px 0; 
     justify-content: center;
     font-family: "Ruda", sans-serif;
     column-gap: 15px;
@@ -28,7 +47,7 @@ export default {
 }
 
 h1 {
-    position: relative; /* Родительский элемент для псевдоэлементов */
+    position: relative; 
     font-size: 25px;
     color: #e8e3d3;
     font-style: normal;
@@ -41,8 +60,9 @@ h1::before {
     top: 50%; 
     height: 1px;
     width: 340px;
-    background-color: #e8e3d3;
+    background-color: v-bind('lineStyle.backgroundColor');
     transform: translateY(-50%); 
+
 }
 
 h1::after {
@@ -52,7 +72,7 @@ h1::after {
     top: 50%;
     height: 1px;
     width: 340px;
-    background-color:#e8e3d3;
+    background-color: v-bind('lineStyle.backgroundColor');
     transform: translateY(-50%); /* Центрируем вертикально */
 }
 </style>

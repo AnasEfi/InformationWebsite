@@ -10,23 +10,21 @@
             </div>
             <button class="carousel-button next" @click="nextSlide">&#10095;</button>
         </div>
-        <div class="all-news-container">
-            <a class="uw-btn" href="/pages/news">Все новости</a>
-
-        </div>
     </div>
 </template>
 <script>
 
+
 import ArticleCard from './ArticleCard.vue';
+
 
 export default {
     name: 'ArticleList',
-    components: { ArticleCard },
+    components: { ArticleCard},
     data() {
         return {
             articles: [
-                {
+                {   
                     publisher: "Леонов Дмитрий Геннадьевич",
                     articleTitle: "Заседание кафедры 1",
                     articleShortDescripion: "28 октября в 17:00 состоится заседание кафедры АСУ (аудитория 1215а)",

@@ -19,7 +19,7 @@
 import DOMPurify from 'dompurify';
 
 export default {
-    name: 'StuffCard',
+    name: 'StaffCard',
     props: {
         name: {
             type: String,

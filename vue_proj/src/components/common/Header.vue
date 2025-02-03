@@ -2,65 +2,76 @@
     <header class="header">
         <div class="first-header-part">
             <div class="main-title">
-                <p>АСУ</p>
+                <a href="/">
+                    <p>АСУ</p>
+                </a>
             </div>
             <div class="main-subtitle">
                 <p>Кафедра автоматизированных
-                    <br>систем управления</p>
+                    <br>систем управления
+                </p>
             </div>
             <div class="first-header-part-sections">
-           <div class="item-first-header-part"><p>Положение о кафедре</p></div><div class="slash"></div> 
-           <div class="item-first-header-part"><p>Документы СМК</p></div> 
+                <div class="item-first-header-part">
+                    <p>Положение о кафедре</p>
+                </div>
+                <div class="slash"></div>
+                <div class="item-first-header-part">
+                    <p>Документы СМК</p>
+                </div>
+            </div>
         </div>
-        </div>
-        
-        <div class="second-header-title">
-        <nav class="low-wrapper">
-            <button class="menu-toggle" @click="toggleMenu">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                    <path
-                        d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
-                </svg>
-            </button>
-            <ul class="main-nav" :class="{ 'show-menu': isMenuOpen }">
 
-                <li v-for="item in menu" :key="item.id" class="nav-item"
-                    :class="{ 'dropdown': item.subItems.length, 'low-wrapper-arrow': item.subItems.length }">
-                    <router-link :to="item.path">
-                        {{ item.title }}
-                    </router-link>
-                    <svg v-if="item.subItems.length" class="low-wrapper-arrow" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
+        <div class="second-header-title">
+            <nav class="low-wrapper">
+                <button class="menu-toggle" @click="toggleMenu">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <path
-                            d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z">
-                        </path>
+                            d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
                     </svg>
-                    <ul v-if="item.subItems" class="dropdown-content">
-                        <div class="line"></div>
-                        <li v-for="subItem in item.subItems" :key="subItem.id" 
-                            :class="{ 'dropdown-sub': subItem.subItems, 'low-wrapper-arrow-sub': subItem.subItems }">
-                            <router-link :to="subItem.path">
-                                {{ subItem.title }}
-                            </router-link>
-                            <svg v-if="subItem.subItems.length" class="low-wrapper-arrow-sub"
-                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                                <path
-                                    d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z">
-                                </path>
-                            </svg>
-                            <ul v-if="subItem.subItems" class="dropdown-content-sub">
-                                <li v-for="subSubItem in subItem.subItems" :key="subSubItem.id">
-                                    <router-link :to="subSubItem.path">
-                                        {{ subSubItem.title }}
-                                    </router-link>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </div>
+                </button>
+                <ul class="main-nav" :class="{ 'show-menu': isMenuOpen }">
+
+                    <li v-for="item in menu" :key="item.id" class="nav-item"
+                        :class="{ 'dropdown': item.subItems.length, 'low-wrapper-arrow': item.subItems.length }">
+                        <router-link :to="item.path">
+                            {{ item.title }}
+                        </router-link>
+                        <svg v-if="item.subItems.length" class="low-wrapper-arrow" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512">
+                            <path
+                                d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z">
+                            </path>
+                        </svg>
+                        <ul v-if="item.subItems" class="dropdown-content">
+                            <div class="line"></div>
+                            <li v-for="subItem in item.subItems" :key="subItem.id"
+                                :class="{ 'dropdown-sub': subItem.subItems, 'low-wrapper-arrow-sub': subItem.subItems }">
+                                <router-link :to="subItem.path">
+                                    {{ subItem.title }}
+                                    <svg v-if="subItem.subItems.length" class="arrow-icon"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                    <path
+                                        d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z">
+                                    </path>
+                                </svg>
+                                </router-link>
+                                
+                                <ul v-if="subItem.subItems.length > 0" class="dropdown-content-sub">
+                                 <div class="line"></div>
+                                    <li v-for="subSubItem in subItem.subItems" :key="subSubItem.id">
+                                        <router-link :to="subSubItem.path">
+                                          
+                                            {{ subSubItem.title }}
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 </template>
 
@@ -92,12 +103,10 @@ export default {
             const menuMap = {};
             const rootItems = [];
 
-            // Создаем карту элементов меню
             menuItems.forEach(item => {
-                    menuMap[item.id] = { ...item, subItems: [] };
+                menuMap[item.id] = { ...item, subItems: [] };
             });
 
-            // Связываем элементы с их родителями
             menuItems.forEach(item => {
                 if (item.parentId !== 0 && item.parentId !== 1) {
                     if (menuMap[item.parentId]) {
@@ -105,7 +114,6 @@ export default {
                     }
                 } else {
                     rootItems.push(menuMap[item.id]);
-
                 }
             });
             return rootItems;
@@ -117,42 +125,54 @@ export default {
 }
 </script>
 
-<style>
-
-.header > .first-header-part {
+<style scoped>
+.header>.first-header-part {
     display: flex;
     height: 100px;
     background-color: rgb(74, 72, 101);
-    box-shadow: 0 1px 1px  rgba(255, 255, 255, 0.61);
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.61);
 }
 
-.header > .first-header-part > .main-title {
+.header>.first-header-part>.main-title {
     font-size: 100px;
     font-weight: 1000;
     padding: 10px 10px 0 30px;
     color: white;
 }
 
-.header > .first-header-part > .main-subtitle {
+.main-title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.main-title a p {
+    transition: color 0.3s ease;
+}
+
+.main-title a:hover p {
+    color: #f4cf78d4;
+}
+
+.header>.first-header-part>.main-subtitle {
     display: flex;
     align-items: center;
     padding-left: 20px;
 }
 
-.header > .first-header-part > .main-subtitle p {
+.header>.first-header-part>.main-subtitle p {
     font-size: 30px;
     color: white;
     font-weight: 100;
 }
 
-.header > .first-header-part > .first-header-part-sections {
+.header>.first-header-part>.first-header-part-sections {
     display: flex;
     align-items: center;
     gap: 10px;
     padding-left: 30px;
 }
 
-.header > .first-header-part > .first-header-part-sections p {
+.header>.first-header-part>.first-header-part-sections p {
     color: white;
     font-size: 15px;
     font-weight: 1000;
@@ -173,7 +193,7 @@ export default {
 }
 
 
-.header > .second-header-title p {
+.header>.second-header-title p {
     font-size: 50px;
     color: rgb(74, 72, 101);
     padding-left: 55px;
@@ -186,13 +206,14 @@ export default {
     width: 100%;
     justify-content: space-between;
     z-index: 1000;
-    background-color:white;
+    background-color: white;
     transition: .5s ease-out;
     font-family: "Ruda";
-    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2); 
-    position: sticky; 
-    top: 0;   
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
 }
+
 .header>.second-header-title p {
     font-family: "Ruda", sans-serif;
     font-size: 50px;
@@ -204,7 +225,7 @@ export default {
 }
 
 nav.low-wrapper {
-    height: 90px;    
+    height: 90px;
     align-content: center;
     font-family: "Ruda", sans-serif;
     font-weight: 800;
@@ -222,7 +243,7 @@ nav.low-wrapper {
     align-items: center;
     text-align: center;
     color: rgb(74, 72, 101);
-    
+
 }
 
 .low-wrapper-arrow {
@@ -236,15 +257,7 @@ nav.low-wrapper {
 
 }
 
-.low-wrapper-arrow-sub {
-    margin: 0 0 0 2px;
-    padding: 0;
-    fill: rgb(0, 0, 0);
-}
 
-.low-wrapper-arrow-sub svg {
-    height: 12px;
-}
 
 .nav-item {
     column-gap: 3px;
@@ -271,6 +284,8 @@ nav.low-wrapper {
 }
 
 .dropdown-content {
+    display: flex;
+    flex-wrap: nowrap;
     margin-top: -13px;
     display: none;
     position: absolute;
@@ -281,7 +296,31 @@ nav.low-wrapper {
     .line {
         border-top: 5px solid rgb(74, 72, 101);
     }
-    
+
+    a {
+        color: rgb(60, 53, 53);
+        padding: 12px 16px;
+        margin: 0 0 0 -2px;
+        /*todo margin!*/
+        text-decoration: none;
+        box-shadow: 0 0 0 0 rgb(0, 0 0, 0.1);
+        display: block;
+        box-shadow: 0px 0px 1px 0px #69696952;
+    }
+
+    a:hover {
+        background-color: #000000;
+    }
+
+}
+.arrow-icon {
+    width: 12px; 
+    height: 12px;
+    fill: rgb(74, 72, 101); /* Цвет стрелки */
+  
+}
+.dropdown:hover svg.arrow-icon {
+   
 }
 
 .dropdown-content-sub {
@@ -291,39 +330,28 @@ nav.low-wrapper {
     left: 100%;
     background-color: #f9f9f9;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    list-style: none;
+   
     min-width: 200px;
-    
+    column-gap: 3px;
+
+
+    a {
+        color: black;
+        text-decoration: none;
+        display: block;
+    }
+
+    a:hover {
+        background-color: #000000;
+    }
+
 }
 
-.dropdown-content a {
-    color: rgb(60, 53, 53);
-    padding: 12px 16px;
-    margin: 0 0 0 -2px;         /*todo margin!*/
-    text-decoration: none;
-    box-shadow: 0 0 0 0 rgb(0, 0 0, 0.1);
-    display: block;
-    box-shadow: 0px 0px 1px 0px #69696952;
-}
-
-.dropdown-content-sub a {
-    color: black;
-    text-decoration: none;
-    display: block;
-    
-}
-
-.dropdown-content a:hover {
-    background-color: #000000;
-}
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-.dropdown-content-sub a:hover {
-    background-color: #000000;
-}
 
 .dropdown-sub:hover .dropdown-content-sub {
     display: block;
@@ -424,5 +452,16 @@ nav.low-wrapper {
     .menu-toggle {
         display: block;
     }
+}
+
+::v-deep .dropdown-sub:hover .arrow-icon {
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease;
+}
+
+
+::v-deep .low-wrapper-arrow svg,
+.arrow-icon {
+    transition: transform 0.3s ease;
 }
 </style>

@@ -21,7 +21,7 @@
 import axios from 'axios';
 import Header from '@/components/common/Header.vue';
 import Footer from '@/components/common/Footer.vue';
-import StuffCardList from '@/components/StuffPage/StuffCardList.vue';
+import StuffCardList from '@/components/StuffPage/StaffCardList.vue';
 import BreadCrumbs from '@/components/common/BreadCrumbs.vue';
 
 export default {
@@ -53,8 +53,10 @@ export default {
 
 .main-img{
     display: flex;
-    background-color:  rgb(74, 72, 101);
+    background-color: rgb(74, 72, 101);
     height: 120px;
     width: 100%;
+
 }
+
 </style>

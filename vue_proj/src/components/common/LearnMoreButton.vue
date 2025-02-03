@@ -10,14 +10,21 @@ export default {
             type: String,
             default: '',
         },
-    }
+        url: {
+            type: String,
+            default: '/',
+        }
+    },
+
 }
 </script>
 
 <style>
 a.btn-style {
     padding: 15px 20px;
-    margin: 0px 80px;
+    position: relative;
+    left: 730px;
+    margin: 50px 0px 0px 0px;
     text-transform: uppercase;
     background-color: #e8e3d3;
     font-family: "Ruda", sans-serif;
@@ -34,8 +41,9 @@ a.btn-style {
 }
 
 a.btn-style:after {
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='50' height='50'%3E%3Cpath d='M15.4,9.88,10.81,5.29a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42L14,11.29a1,1,0,0,1,0,1.42L9.4,17.29a1,1,0,0,0,1.41,1.42l4.59-4.59A3,3,0,0,0,15.4,9.88Z' fill='white'/%3E%3C/svg%3E");
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-5 0 23 23' width='40' height='50'%3E%3Cpath d='m6.733,23.888l-.707-.707,10.827-10.827c.095-.095.146-.22.146-.354s-.052-.259-.146-.354L6.026.819l.707-.707,10.827,10.827c.283.283.439.66.439,1.061s-.156.777-.439,1.061l-10.827,10.827Z' fill='white'/%3E%3C/svg%3E");
     position: absolute;
+    
     background-color: rgb(74, 72, 101);
     top: 0;
     bottom: 0;

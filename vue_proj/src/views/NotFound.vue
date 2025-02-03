@@ -1,7 +1,7 @@
 <template>
     <div class="not-found">
         <h1>
-            Ничего не найдено
+            Not found 404
         </h1>
     </div>
 </template>
@@ -13,9 +13,9 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-
+    background-color: aliceblue;
     h1 {
-        color: #ffffff;
+        color: #000000;
         font-size: 70px;
         margin-bottom: 20px;
     }

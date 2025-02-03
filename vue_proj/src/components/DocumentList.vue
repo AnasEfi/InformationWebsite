@@ -37,8 +37,8 @@ export default {
 .documents-flex-container {
     display: flex;
     gap: 10px;
-    margin: 60px 30px;
+    margin: 20px 30px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 </style>

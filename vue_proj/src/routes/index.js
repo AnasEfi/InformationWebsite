@@ -21,7 +21,19 @@ const routes = [
     meta: {
       breadcrumb: [
         {
-          name: 'История'
+          name: 'Основные вехи'
+        }
+      ]
+    }
+  },
+  {
+    path: '/about/history/picture',
+    name: 'picture',
+    component: () => import(/* webpackChunkName: "PicturePage" */ '../views/PicturePage.vue'),
+    meta: {
+      breadcrumb: [
+        {
+          name: 'Портрет кафедры'
         }
       ]
     }
@@ -63,13 +75,61 @@ const routes = [
     }
   },
   {
-    path: '/stuff',
-    name: 'stuff',
-    component: () => import(/* webpackChunkName: "StuffPage" */ '../views/StuffPage.vue'),
+    path: '/staff',
+    name: 'staff',
+    component: () => import(/* webpackChunkName: "StaffPage" */ '../views/StaffPage.vue'),
     meta: {
       breadcrumb: [
         {
           name: 'Сотрудники'
+        }
+      ]
+    }
+  },
+  {
+    path: '/resources',
+    name: 'resources',
+    component: () => import(/* webpackChunkName: "ResourcesPage" */ '../views/ResourcesPage.vue'),
+    meta: {
+      breadcrumb: [
+        {
+          name: 'Ресурсы'
+        }
+      ]
+    }
+  },
+  {
+    path: '/science',
+    name: 'science',
+    component: () => import(/* webpackChunkName: "SciencePage" */ '../views/SciencePage.vue'),
+    meta: {
+      breadcrumb: [
+        {
+          name: 'Наука'
+        }
+      ]
+    }
+  },
+  {
+    path: '/forty',
+    name: '/forty',
+    component: () => import(/* webpackChunkName: "AnniversaryFortyPage" */ '../views/AnniversaryFortyPage.vue'),
+    meta: {
+      breadcrumb: [
+        {
+          name: 'Юбилей'
+        }
+      ]
+    }
+  },
+  {
+    path: '/heads',
+    name: '/heads',
+    component: () => import(/* webpackChunkName: "HeadsPage" */ '../views/HeadsPage.vue'),
+    meta: {
+      breadcrumb: [
+        {
+          name: 'Заведующие'
         }
       ]
     }

@@ -1,6 +1,7 @@
 <template>
     <footer id="footer">
         <section class="footer-container">
+            <div class="social-network-section"></div>
             <div class="contact-section">
                 <div class="left-contact-section">
                     <div class="footer-logo"><img src="./../../assets/images/asu.logo.png" alt="logo"></div>
@@ -46,13 +47,17 @@ section.footer-container {
     background-color:  rgb(74, 72, 101);
     min-height: 150px;
 }
+.social-network-section{
+    height: 190px;
+    background-color: #e8e3d3;;
+}
 
 .contact-section {
     display: flex;
     flex-direction: space-between;
     gap: 10px;
     padding: 5vh 5vw;
-    border-top: 5px solid #e8e3d3;
+
 
     .left-contact-section {
        

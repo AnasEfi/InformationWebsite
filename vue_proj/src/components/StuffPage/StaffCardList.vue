@@ -17,7 +17,7 @@
 
 
 export default {
-    name: 'StuffCardList',
+    name: 'StaffCardList',
     props: {
         stuff: {
             type: Array,

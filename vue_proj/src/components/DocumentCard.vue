@@ -39,11 +39,12 @@ export default {
     flex-direction: column;
     justify-content: space-between;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7);
-    width: 500px;
-    height: fit-content;
+    box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.7);
+    width: 250px;
+    height: 150px;
     padding: 10px 
-
+  
+    
 }
 
 .img-doc{
