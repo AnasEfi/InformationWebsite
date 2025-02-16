@@ -75,16 +75,12 @@
 
         <section class="study-material">
             <MainPageTitle :title="titleStudyMaterial" lineColor="#4A4865" color="#4A4865" />
-           
-            <div v-if="materials.length === 0">Нет материалов</div>
-            <div v-else>
             <PersonStudyMaterialList :materials="this.materials" />
             <LearnMoreButton title="Все материалы" url="/"></LearnMoreButton>
-        </div>
         </section>
         <section class="study-material-docs">
             <MainPageTitle :title="titleStudyMaterialDocs"></MainPageTitle>
-            <StudyMaterialDocsList></StudyMaterialDocsList>
+            <StudyMaterialDocsList :documents="this.studyDocs"></StudyMaterialDocsList>
             <LearnMoreButton title="Все материалы" url="/"></LearnMoreButton>
         </section>
         <Footer></Footer>
@@ -113,6 +109,7 @@ export default {
             titleStudyMaterial: 'Материалы сотрудников кафедры',
             titleStudyMaterialDocs: 'Документы по учебной работе',
             materials: [],
+            studyDocs:[],
             isLoading: true,
         };
     },
@@ -125,10 +122,20 @@ export default {
                 console.error('Error fetching stuffDocuments', error);
                 this.isLoading = false
             }
+        },
+        async fetchStudyDocs() {
+            try {
+                const response = await axios.get('http://localhost:3000/documents');
+                this.studyDocs = response.data;
+            } catch (error) {
+                console.error('Error fetching studyDocs', error);
+                this.isLoading = false
+            }
         }
     },
     mounted() {
          this.fetchPersonStudyMaterials(); 
+         this.fetchStudyDocs();
     }
    
 }
@@ -141,17 +148,12 @@ export default {
 }
 
 .main-img {
-    background-color: rgb(74, 72, 101);
+    
     background-image: url('../assets/images/main-foto.PNG');
-    margin: 20px 0px;
+    margin: 50px 0px 0px 0px;
     height: 300px;
     background-repeat: no-repeat;
     background-size: cover;
-
-    .major-title {
-        padding: 0px 0px 10px 20px;
-        align-content: end;
-    }
 
     p {
         font-size: 50px;
@@ -162,7 +164,7 @@ export default {
 
 .button-cover{
     position: relative;
-    right: 650px;
+    right: 700px;
 }
 
 nav.container {
@@ -220,23 +222,21 @@ nav.container ul li:not(:last-child) {
 section.news,
 section.study-material-docs {
 
-    padding: 40px 10vw;
+    padding: 40px 20px;
     background-color: rgb(74, 72, 101);
 
 }
 
 section.main-sections-description {
-
     background-color: #fff;
     width: 100%;
     margin-top: 100px;
-    padding: 10px 10vw;
+    padding: 10px 20px;
 
 }
 
 section.study-material {
-    margin: 40px 10px;
-    padding: 40px 10vw;
+    padding: 40px 20px;
 }
 
 

@@ -1,10 +1,12 @@
 <template>
     <div class="item">
         <a href="" class="card">
-            <div class="thumb"></div>
             <article>
                 <h1>{{ this.title }}</h1>
-                <span>{{ this.author }}</span>
+                <div class="block-wrapper">
+                <span class="author-block">{{ this.author }}</span>
+                <span class="publish-date-block">{{ this.publishDate }}</span>
+            </div>
             </article>
         </a>
     </div>
@@ -24,6 +26,10 @@ export default {
         author: {
             type: String,
             default: ''
+        },
+        publishDate:{
+            type: Date,
+            default: ''
         }
     }
 }
@@ -35,16 +41,16 @@ export default {
 }
 
 .card {
-
     flex-wrap: wrap;
     height: 100%;
     width: 100%;
+    border-top: 15px solid rgb(74, 72, 101);
     background: white;
-
     color: #444;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     transition: all .1s ease-in;
 
     &:hover {
@@ -53,11 +59,19 @@ export default {
     }
 
     article {
-        padding: 10px;
+        height: 100%;
+        padding: 15px;
+
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        .block-wrapper{
+            display:flex;
+            justify-content:space-between;
+        }
     }
+   
 
     h1 {
 
@@ -78,12 +92,6 @@ export default {
         text-transform: uppercase;
         letter-spacing: .05em;
         margin: 2em 0 0 0;
-    }
-
-    .thumb {
-        padding-bottom: 10%;
-        background-color: #295773;
-        background-position: center;
     }
 }
 

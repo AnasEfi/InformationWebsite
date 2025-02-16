@@ -1,14 +1,10 @@
 <template>
-    <section class="stuff">
+    <section class="staff">
         <Header></Header>
-        <div class="main-img">
-            <div class="MainTitle">
-                <p>Сотрудники кафедры</p>
-            </div>
-        </div>
+        <SectionTitle :title="this.title"></SectionTitle>
         <BreadCrumbs/>
-        <div v-if="stuff.length > 0">
-            <StuffCardList :stuff="stuff"></StuffCardList>
+        <div v-if="staff.length > 0">
+            <StuffCardList :staff="staff"></StuffCardList>
         </div>
         <div v-else>
             Загрузка данных...
@@ -21,42 +17,38 @@
 import axios from 'axios';
 import Header from '@/components/common/Header.vue';
 import Footer from '@/components/common/Footer.vue';
-import StuffCardList from '@/components/StuffPage/StaffCardList.vue';
+import StuffCardList from '@/components/StaffPage/StaffCardList.vue';
 import BreadCrumbs from '@/components/common/BreadCrumbs.vue';
+import SectionTitle from '@/components/common/SectionTitle.vue'
 
 export default {
-    components: { StuffCardList, Header, Footer, BreadCrumbs },
-    name: 'StuffPage',
+    components: { StuffCardList, Header, Footer, BreadCrumbs, SectionTitle },
+    name: 'StaffPage',
 
     data() {
         return {
-            stuff: [],
+            staff: [],
+            title: 'Сотрудники кафедры'
         }
     },
     methods: {
-        async fetchStuff() {
+        async fetchStaff() {
             try {
-                const response = await axios.get('http://localhost:3000/stuff');
-                this.stuff = response.data;
+                const response = await axios.get('http://localhost:3000/staffShort');
+                this.staff = response.data;
             } catch (error) {
-                console.error('Error fetching stuff', error);
+                console.error('Error fetching staff', error);
             }
         },
     },
     created() {
-        this.fetchStuff();
+        this.fetchStaff();
     }
 }
 </script>
 
 <style scoped>
 
-.main-img{
-    display: flex;
-    background-color: rgb(74, 72, 101);
-    height: 120px;
-    width: 100%;
 
-}
 
 </style>

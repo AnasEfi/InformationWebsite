@@ -23,10 +23,6 @@ export default {
         url: {
             type: String,
             default: '',
-        },
-        idPage: {
-            type: Number,
-            default: null
         }
     }
 }

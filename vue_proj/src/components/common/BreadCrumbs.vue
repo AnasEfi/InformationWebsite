@@ -8,12 +8,13 @@
                                 d="M13.338.833a2,2,0,0,0-2.676,0L0,10.429v10.4a3.2,3.2,0,0,0,3.2,3.2H20.8a3.2,3.2,0,0,0,3.2-3.2v-10.4ZM15,22.026H9V17a3,3,0,0,1,6,0Zm7-1.2a1.2,1.2,0,0,1-1.2,1.2H17V17A5,5,0,0,0,7,17v5.026H3.2a1.2,1.2,0,0,1-1.2-1.2V11.319l10-9,10,9Z" />
                         </g>
                     </svg></a></li>
-            <li v-for="(breadcrumb, idx) in breadcrumbList" :key="idx" @click="routeTo(idx)"
-                :class="{ 'linked': !!breadcrumb.link }">
-                {{ breadcrumb.name }}
-            </li>
-        </ul>
-    </nav>
+                    <li v-for="(breadcrumb, idx) in breadcrumbList" :key="idx" @click="routeTo(idx)"
+          :class="{ 'linked': !!breadcrumb.path }">
+          <router-link :to="breadcrumb.path">{{ breadcrumb.name }}</router-link>
+                    
+      </li>
+    </ul>
+  </nav>
 </template>
 <script>
 export default {
@@ -27,9 +28,17 @@ export default {
     watch: { '$route'() { this.updateList() } },
     methods: {
         routeTo(pRouteTo) {
-            if (this.breadcrumbList[pRouteTo].link) this.$router.push(this.breadcrumbList[pRouteTo].link)
+            if (this.breadcrumbList[pRouteTo].path) this.$router.push(this.breadcrumbList[pRouteTo].path)
         },
-        updateList() { this.breadcrumbList = this.$route.meta.breadcrumb }
+        updateList() { 
+            const matchedRoutes = this.$route.matched;
+            this.breadcrumbList = matchedRoutes.map((route, index) => {
+                return {
+                    name: route.meta.breadcrumb[0].name,
+                    path: index < matchedRoutes.length - 1 ? route.path: null
+                };
+            })
+            this.breadcrumbList = this.$route.meta.breadcrumb }
     }
 }
 
@@ -69,6 +78,13 @@ export default {
         -o-background-size: 7px 5px;
         background-size: 7px 5px;
     }
+}
+.bread-crumbs a {
+  text-decoration: none;
+}
+
+.bread-crumbs a:hover {
+  text-decoration: underline;
 }
 
 </style>

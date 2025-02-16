@@ -319,9 +319,6 @@ nav.low-wrapper {
     fill: rgb(74, 72, 101); /* Цвет стрелки */
   
 }
-.dropdown:hover svg.arrow-icon {
-   
-}
 
 .dropdown-content-sub {
     display: none;

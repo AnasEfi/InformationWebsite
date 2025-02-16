@@ -58,7 +58,7 @@ h1::before {
     position: absolute; 
     left: -360px; 
     top: 50%; 
-    height: 1px;
+    height: 2px;
     width: 340px;
     background-color: v-bind('lineStyle.backgroundColor');
     transform: translateY(-50%); 
@@ -70,9 +70,9 @@ h1::after {
     position: absolute; 
     right: -360px; 
     top: 50%;
-    height: 1px;
+    height: 2px;
     width: 340px;
     background-color: v-bind('lineStyle.backgroundColor');
-    transform: translateY(-50%); /* Центрируем вертикально */
+    transform: translateY(-50%); 
 }
 </style>
