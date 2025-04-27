@@ -150,10 +150,15 @@ export default {
 .main-img {
     
     background-image: url('../assets/images/main-foto.PNG');
-    margin: 50px 0px 0px 0px;
+    margin: 0px;
     height: 300px;
+    margin-top: 20px;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 90%; /* Размер изображения */
+    background-position: center; /* Центрирование изображения */
+    display: flex;
+    align-items: center; /* Выравнивание по вертикали */
+    justify-content: center; /* Выравнивание по горизонтали */
 
     p {
         font-size: 50px;

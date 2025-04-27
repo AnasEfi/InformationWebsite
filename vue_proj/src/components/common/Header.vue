@@ -408,6 +408,7 @@ nav.low-wrapper {
         position: fixed;
         left: 0;
         background-color: rgb(74, 72, 101);
+        color:white;
 
     }
 
